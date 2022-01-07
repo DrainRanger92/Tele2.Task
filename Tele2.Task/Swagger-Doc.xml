@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tele2.Task</name>
+    </assembly>
+    <members>
+        <member name="M:Tele2.Task.Controllers.DwellersController.GetDwellersInfo">
+            <summary>
+            Gets the entire retrieved data about all city dwellers
+            </summary>
+            <returns>A list of dwellers</returns>
+        </member>
+        <member name="M:Tele2.Task.Controllers.DwellersController.GetDwellerInfo(System.String)">
+            <summary>
+            Gets certain person by his/her unique id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tele2.Task.Controllers.DwellersController.GetFilteredDwellersInfo(System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Finds people satisfying the desired criteria and splits the results into pages.
+            </summary>
+            <remarks>Won't apply filtering if parameters are intentionally or accidentally wrong</remarks>
+            <param name="page">1-based page number</param>
+            <param name="entries">number of entries to display per page</param>
+            <param name="sex">aplies to filtering only if contains "male" or "female" <see cref="T:System.String"/>s</param>
+            <param name="youngest">the lowest age of people to display</param>
+            <param name="oldest">the greatest age to display</param>
+            <returns>An enumeration of dwellers</returns>
+        </member>
+        <member name="M:Tele2.Task.Extensions.LinqExtensions.Find``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0},System.Func{System.Boolean})">
+            <summary>
+            Finds element in an enumeration using predicate <paramref name="execute"/> if <paramref name="canExecute"/> returns true, otherwise returns the enumeration untouched.
+            </summary>
+            <remarks>This method enumerates the sequence</remarks>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable"></param>
+            <param name="execute"></param>
+            <param name="canExecute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tele2.Task.Extensions.LinqExtensions.WithPagination``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Applies pagination for an enumeration of <typeparamref name="T"/> objects
+            </summary>
+            <remarks>Designed for 1-based page number</remarks>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable"></param>
+            <param name="page"></param>
+            <param name="entries"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tele2.Task.Interaction.DataManager`1.Initialize">
+            <summary>
+            Initializes an object of type <see cref="T:Tele2.Task.Interaction.DataManager`1"/>
+            </summary>
+            <remarks>To be called on startup</remarks>
+        </member>
+        <member name="M:Tele2.Task.Interaction.IRepository`1.GetAll">
+            <summary>
+            Method gets all entries of a type <typeparamref name="T"/>
+            </summary>
+            <returns>All existing entries in <see cref="T:Tele2.Task.Interaction.IRepository`1"/></returns>
+        </member>
+        <member name="M:Tele2.Task.Interaction.IRepository`1.Element(System.String)">
+            <summary>
+            Finds a certain element in repository
+            </summary>
+            <param name="id"><see cref="T:System.String"/> as an identity</param>
+            <returns>Element of a type <typeparamref name="T"/></returns>
+        </member>
+        <member name="M:Tele2.Task.Interaction.IRepository`1.Add(`0)">
+            <summary>
+            Adds an element to a repository
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
